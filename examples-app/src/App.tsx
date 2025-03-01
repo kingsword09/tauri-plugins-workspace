@@ -1,46 +1,64 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { IosNetworkDetectDemo } from "./pages/IosNetworkDetectDemo";
 import "./App.css";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState("home");
 
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
-  }
+  const renderContent = () => {
+    switch (currentPage) {
+      case "ios-network-detect":
+        return <IosNetworkDetectDemo />;
+      default:
+        return <Home />;
+    }
+  };
 
   return (
     <main className="container">
-      <h1>Welcome to Tauri + React</h1>
+      <button className="menu-button" onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+        <div className={`hamburger ${isDrawerOpen ? "open" : ""}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
 
-      <div className="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
+      <nav className={`drawer ${isDrawerOpen ? "open" : ""}`}>
+        <h1>Tauri Plugins Demo</h1>
+        <ul>
+          <li>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setCurrentPage("ios-network-detect");
+                setIsDrawerOpen(false);
+              }}
+            >
+              iOS Network Detect
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input id="greet-input" onChange={(e) => setName(e.currentTarget.value)} placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
+      {isDrawerOpen && <div className="overlay" onClick={() => setIsDrawerOpen(false)} />}
+
+      <div className="content">{renderContent()}</div>
     </main>
+  );
+}
+
+function Home() {
+  return (
+    <div>
+      <h2>Tauri 插件演示</h2>
+      <p>点击左上角菜单选择要测试的插件功能</p>
+    </div>
   );
 }
 
