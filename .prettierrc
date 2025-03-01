@@ -1,0 +1,22 @@
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "printWidth": 120,
+  "semi": true,
+  "proseWrap": "always",
+  "overrides": [
+    {
+      "files": "*.{js,mjs,jsx,ts,tsx,mts,cts}",
+      "options": {
+        "singleQuote": false,
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.{kt,kts}",
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}
