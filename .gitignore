@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
+.gradle
 
 # Added by cargo
 /target
