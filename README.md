@@ -6,8 +6,8 @@ A collection of plugins for Tauri 2.0 applications.
 
 ## 🚀 Features
 
-- Plugin A: Description
-- Plugin B: Description
+- ios-network-detect: A plugin that detects iOS network permission status and automatically displays an authorization
+  sheet when network access is not granted.
 - More plugins coming soon...
 
 ## 📦 Installation
