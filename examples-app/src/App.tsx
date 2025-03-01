@@ -1,5 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { IosNetworkDetectDemo } from "./pages/IosNetworkDetectDemo";
