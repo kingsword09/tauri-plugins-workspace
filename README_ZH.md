@@ -6,7 +6,7 @@
 
 ## 🚀 特性
 
-- ios-network-detect：用于检测 iOS 设备的网络权限状态，当用户未授权网络访问时，自动弹出授权提示 sheet，引导用户进行网络权限授权。
+- [ios-network-detect](/packages/tauri-plugin-ios-network-detect)：用于检测 iOS 设备的网络权限状态，当用户未授权网络访问时，自动弹出授权提示 sheet。
 - 更多插件开发中...
 
 ## 📦 安装
