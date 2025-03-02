@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-ios-network-detect"
-version = "2.0.0"
+version = "2.0.1"
 description = "A plugin that detects iOS network permission status and automatically displays an authorization."
 edition = { workspace = true }
 authors = { workspace = true }

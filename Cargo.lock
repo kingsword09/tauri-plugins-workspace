@@ -3696,7 +3696,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-ios-network-detect"
-version = "2.0.0"
+version = "2.0.1"
 dependencies = [
  "serde",
  "tauri",

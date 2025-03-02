@@ -27,4 +27,4 @@ tauri-plugin-opener = "2"
 
 
 [target.'cfg(any(target_os = "ios"))'.dependencies]
-tauri-plugin-ios-network-detect = { path = "../../packages/tauri-plugin-ios-network-detect", version = "2.0.0" }
+tauri-plugin-ios-network-detect = { path = "../../packages/tauri-plugin-ios-network-detect", version = "2.0.1" }
