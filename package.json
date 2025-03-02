@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "examples-app:android:dev": "pnpm run --filter \"examples-app\" tauri android dev",
-    "examples-app:ios:dev": "pnpm run --filter \"examples-app\" tauri ios dev",
-    "examples-app:dev": "pnpm run --filter \"examples-app\" tauri dev",
+    "dev:android": "pnpm run --filter \"examples-app\" tauri android dev",
+    "dev:ios": "pnpm run --filter \"examples-app\" tauri ios dev",
+    "dev:desktop": "pnpm run --filter \"examples-app\" tauri dev",
     "prepare": "husky"
   },
   "lint-staged": {

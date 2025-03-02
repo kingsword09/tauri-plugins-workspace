@@ -1,8 +1,8 @@
 [package]
 name = "tauri-plugin-ios-network-detect"
 version = "2.0.0"
-authors = [ "You" ]
-description = ""
+authors = [ "kingsword09 <kingsword09@gmail.com>" ]
+description = "A plugin that detects iOS network permission status and automatically displays an authorization."
 edition = "2021"
 rust-version = { workspace = true }
 exclude = ["/examples", "/dist-js", "/guest-js", "/node_modules"]
