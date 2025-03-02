@@ -7,7 +7,7 @@ authors = { workspace = true }
 license = { workspace = true }
 rust-version = { workspace = true }
 repository = { workspace = true }
-exclude = ["/examples", "/dist-js", "/guest-js", "/node_modules"]
+exclude = ["/examples", "/dist-js", "/guest-js", "/node_modules", "/permissions"]
 links = "tauri-plugin-ios-network-detect"
 
 [package.metadata.docs.rs]
