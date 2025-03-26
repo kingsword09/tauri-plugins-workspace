@@ -1,0 +1,8 @@
+/build
+/.tauri
+/.gradle
+/local.properties
+/*.idea
+/*.iml
+/.kotlin
+/.os

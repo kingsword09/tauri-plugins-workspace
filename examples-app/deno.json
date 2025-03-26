@@ -1,0 +1,30 @@
+{
+  "name": "examples-app",
+  "version": "0.1.0",
+  "exports": {
+    ".": "./src/mod.ts"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ]
+  },
+  "tasks": {
+    "dev": "deno run -A npm:vite",
+    "build": "deno check src/main.ts && deno run -A npm:vite build",
+    "preview": "deno run -A npm:vite preview",
+    "tauri": "deno run -A npm:@tauri-apps/cli"
+  },
+  "imports": {
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
+    "@vitejs/plugin-react": "npm:@vitejs/plugin-react",
+    "react": "npm:react",
+    "react-dom": "npm:react-dom",
+    "react-router-dom": "npm:react-router-dom",
+    "vite": "npm:vite@^6.0.3"
+  }
+}

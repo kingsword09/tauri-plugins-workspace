@@ -28,3 +28,6 @@ tauri-plugin-opener = "2"
 
 [target.'cfg(any(target_os = "ios"))'.dependencies]
 tauri-plugin-ios-network-detect = { path = "../../packages/tauri-plugin-ios-network-detect", version = "2.0.1" }
+
+[target.'cfg(any(target_os = "ios", target_os = "android"))'.dependencies]
+tauri-plugin-mobile-onbackpressed-listener = { path = "../../packages/tauri-plugin-mobile-onbackpressed-listener", version = "2.0.0" }

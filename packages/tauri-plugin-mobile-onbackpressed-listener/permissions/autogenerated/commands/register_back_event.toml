@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-register-back-event"
+description = "Enables the register_back_event command without any pre-configured scope."
+commands.allow = ["register_back_event"]
+
+[[permission]]
+identifier = "deny-register-back-event"
+description = "Denies the register_back_event command without any pre-configured scope."
+commands.deny = ["register_back_event"]

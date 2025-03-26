@@ -11,6 +11,11 @@ pub fn run() {
       #[cfg(target_os = "ios")]
       app.handle().plugin(tauri_plugin_ios_network_detect::init())?;
 
+      #[cfg(any(target_os = "ios", target_os = "android"))]
+      app
+        .handle()
+        .plugin(tauri_plugin_mobile_onbackpressed_listener::init())?;
+
       Ok(())
     })
     .plugin(tauri_plugin_opener::init())

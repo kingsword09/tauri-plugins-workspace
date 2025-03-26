@@ -1,0 +1,37 @@
+[package]
+name = "tauri-plugin-mobile-onbackpressed-listener"
+version = "2.0.0"
+description = "This plugin mainly provides event listener for controlling the onBackpressed action on mobile devices."
+edition = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+rust-version = { workspace = true }
+repository = { workspace = true }
+exclude = [
+  "/examples",
+  "/dist-js",
+  "/guest-js",
+  "/node_modules",
+  "/permissions",
+]
+links = "tauri-plugin-mobile-onbackpressed-listener"
+
+[package.metadata.docs.rs]
+rustc-args = ["--cfg", "docsrs"]
+rustdoc-args = ["--cfg", "docsrs"]
+targets = ["aarch64-apple-ios"]
+
+[package.metadata.platforms.support]
+windows = { level = "none", notes = "" }
+linux = { level = "none", notes = "" }
+macos = { level = "none", notes = "" }
+android = { level = "full", notes = "" }
+ios = { level = "full", notes = "" }
+
+[build-dependencies]
+tauri-plugin = { workspace = true, features = ["build"] }
+
+[dependencies]
+tauri = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }

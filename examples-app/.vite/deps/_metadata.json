@@ -1,0 +1,46 @@
+{
+  "hash": "0d3d1196",
+  "configHash": "72c60d9e",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "d1a6dab8",
+  "optimized": {
+    "react": {
+      "src": "../../../node_modules/.deno/react@19.0.0/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "3d36be40",
+      "needsInterop": true
+    },
+    "react-dom": {
+      "src": "../../../node_modules/.deno/react-dom@19.0.0/node_modules/react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "73be6ca2",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../../node_modules/.deno/react@19.0.0/node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "d58bcb39",
+      "needsInterop": true
+    },
+    "react/jsx-runtime": {
+      "src": "../../../node_modules/.deno/react@19.0.0/node_modules/react/jsx-runtime.js",
+      "file": "react_jsx-runtime.js",
+      "fileHash": "bd0700ac",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../../node_modules/.deno/react-dom@19.0.0/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "3a1b31c0",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-5ID6KAKN": {
+      "file": "chunk-5ID6KAKN.js"
+    },
+    "chunk-AYB5BMA4": {
+      "file": "chunk-AYB5BMA4.js"
+    }
+  }
+}

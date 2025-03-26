@@ -886,6 +886,7 @@ dependencies = [
  "tauri",
  "tauri-build",
  "tauri-plugin-ios-network-detect",
+ "tauri-plugin-mobile-onbackpressed-listener",
  "tauri-plugin-opener",
 ]
 
@@ -3697,6 +3698,16 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-ios-network-detect"
 version = "2.0.1"
+dependencies = [
+ "serde",
+ "tauri",
+ "tauri-plugin",
+ "thiserror 2.0.11",
+]
+
+[[package]]
+name = "tauri-plugin-mobile-onbackpressed-listener"
+version = "2.0.0"
 dependencies = [
  "serde",
  "tauri",

@@ -1,3 +1,22 @@
 {
-  "workspace": []
+  "nodeModulesDir": "auto",
+  "workspace": [
+    "./examples-app",
+    "./packages/tauri-plugin-mobile-onbackpressed-listener"
+  ],
+  "tasks": {
+    "dev:android": "deno task --filter 'examples-app' tauri android dev",
+    "dev:ios": "deno task --filter 'examples-app' tauri ios dev",
+    "dev:desktop": "deno task --filter 'examples-app' tauri web dev",
+    "prepare": "husky",
+    "lint-staged": "prettier --write --ignore-unknown"
+  },
+  "imports": {
+    "@tauri-apps/api": "npm:@tauri-apps/api@^2",
+    "@tauri-apps/cli": "npm:@tauri-apps/cli@^2",
+    "husky": "npm:husky@^9.1.7",
+    "lint-staged": "npm:lint-staged@^15.4.3",
+    "prettier": "npm:prettier@^3.5.2",
+    "typescript": "npm:typescript@~5.6.2"
+  }
 }

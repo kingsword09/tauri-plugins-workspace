@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { invoke } from "@tauri-apps/api/core";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { IosNetworkDetectDemo } from "./pages/IosNetworkDetectDemo";
+import React, { useState } from "react";
+import { IosNetworkDetectDemo } from "./pages/IosNetworkDetectDemo.tsx";
+import { MobileOnBackpressedListenerDemo } from "./pages/MobileOnBackpressedListenerDemo.tsx";
 import "./App.css";
 
 function App() {
@@ -12,6 +11,8 @@ function App() {
     switch (currentPage) {
       case "ios-network-detect":
         return <IosNetworkDetectDemo />;
+      case "mobile-onbackpressed-listener":
+        return <MobileOnBackpressedListenerDemo />;
       default:
         return <Home />;
     }
@@ -40,6 +41,16 @@ function App() {
               }}
             >
               iOS Network Detect
+            </a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setCurrentPage("mobile-onbackpressed-listener");
+                setIsDrawerOpen(false);
+              }}
+            >
+              Mobile OnBackpressed Listener
             </a>
           </li>
         </ul>
