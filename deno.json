@@ -2,6 +2,7 @@
   "nodeModulesDir": "auto",
   "workspace": [
     "./examples-app",
+    "./examples-app/src-tauri/gen/apple",
     "./packages/tauri-plugin-mobile-onbackpressed-listener"
   ],
   "tasks": {

@@ -1,0 +1,6 @@
+{
+  "name": "@kingsword/examples-app",
+  "tasks": {
+    "tauri": "deno run -A npm:@tauri-apps/cli"
+  }
+}
