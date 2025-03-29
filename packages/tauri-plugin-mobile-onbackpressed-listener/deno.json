@@ -1,6 +1,6 @@
 {
   "name": "@kingsword/tauri-plugin-mobile-onbackpressed-listener",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "exports": {
     ".": "./guest-js/index.ts"
   },
@@ -8,6 +8,7 @@
     "@tauri-apps/api": "npm:@tauri-apps/api@^2",
     "@tauri-apps/cli": "npm:@tauri-apps/cli@^2"
   },
+  "license": "MIT",
   "publish": {
     "include": [
       "README.md",
