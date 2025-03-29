@@ -1,5 +1,12 @@
 # Tauri Plugin mobile-onbackpressed-listener
 
+[![JSR @kingsword09](https://jsr.io/badges/@kingsword09)](https://jsr.io/@kingsword09)
+[![JSR](https://jsr.io/badges/@kingsword/tauri-plugin-mobile-onbackpressed-listener)](https://jsr.io/@kingsword/tauri-plugin-mobile-onbackpressed-listener)
+[![Crates.io][crates-badge]][crates-url]
+
+[crates-badge]: https://img.shields.io/crates/v/tauri-plugin-mobile-onbackpressed-listener
+[crates-url]: https://crates.io/crates/tauri-plugin-mobile-onbackpressed-listener
+
 | Platform | Supported |
 | -------- | --------- |
 | Linux    | x         |
@@ -33,14 +40,14 @@ tauri-plugin-mobile-onbackpressed-listener = "2.0.0"
 #### Automatically
 
 use the cargo add command to install it automatically (mobile targets only)：
+
 ```bash
 cargo add tauri-plugin-mobile-onbackpressed-listener --target 'cfg(any(target_os = "ios", target_os = "android"))'
 ```
 
 ## Usage
 
-First you need to register the core plugin with Tauri:
-`src-tauri/src/lib.rs`
+First you need to register the core plugin with Tauri: `src-tauri/src/lib.rs`
 
 ```rust
 pub fn run() {
@@ -58,5 +65,5 @@ pub fn run() {
 ```
 
 ```ts
-import { registerBackEvent } from "jsr:@kingsword/tauri-plugin-mobile-onbackpressed-listener"
+import { registerBackEvent } from "jsr:@kingsword/tauri-plugin-mobile-onbackpressed-listener";
 ```

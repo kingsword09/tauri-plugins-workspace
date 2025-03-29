@@ -1,5 +1,10 @@
 # Tauri Plugin ios-network-detect
 
+[![Crates.io][crates-badge]][crates-url]
+
+[crates-badge]: https://img.shields.io/crates/v/tauri-plugin-ios-network-detect
+[crates-url]: https://crates.io/crates/tauri-plugin-ios-network-detect
+
 | Platform | Supported |
 | -------- | --------- |
 | Linux    | x         |
