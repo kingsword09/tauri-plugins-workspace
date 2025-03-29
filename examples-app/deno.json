@@ -1,9 +1,7 @@
 {
   "name": "examples-app",
   "version": "0.1.0",
-  "exports": {
-    ".": "./src/mod.ts"
-  },
+  "exports": {},
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",

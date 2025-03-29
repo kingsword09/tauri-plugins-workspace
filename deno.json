@@ -2,6 +2,7 @@
   "nodeModulesDir": "auto",
   "workspace": [
     "./examples-app",
+    "./examples-app/src-tauri/gen/android",
     "./examples-app/src-tauri/gen/apple",
     "./packages/tauri-plugin-mobile-onbackpressed-listener"
   ],
@@ -19,5 +20,6 @@
     "lint-staged": "npm:lint-staged@^15.4.3",
     "prettier": "npm:prettier@^3.5.2",
     "typescript": "npm:typescript@~5.6.2"
-  }
+  },
+  "lock": false
 }

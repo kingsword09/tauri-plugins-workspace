@@ -1,5 +1,5 @@
 {
-  "name": "@kingsword/examples-app-ios",
+  "name": "@kingsword/examples-app-android",
   "exports": {},
   "tasks": {
     "tauri": "deno run -A npm:@tauri-apps/cli"
