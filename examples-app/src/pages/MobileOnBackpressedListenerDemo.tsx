@@ -1,26 +1,31 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { registerBackEvent } from "@kingsword/tauri-plugin-mobile-onbackpressed-listener";
+import { PluginListener } from "@tauri-apps/api/core";
 
 let isListener = false;
-export function MobileOnBackpressedListenerDemo() {
-  // const navigate = useNavigate();
+let listener: PluginListener | undefined;
 
-  
+export function MobileOnBackpressedListenerDemo() {
+  const navigate = useNavigate();
+
   const listenerBackButton = (callback: () => void) => {
     if (isListener) return;
     isListener = true;
     const listenerClose = async () => {
-      const listener = await registerBackEvent(callback);
-      // await listener.unregister();
-      isListener = false;
+      listener = await registerBackEvent(callback);
     };
     listenerClose();
   };
 
   const registerBackEventToBack = async () => {
-    listenerBackButton(() => {
-      console.log("1111")
-    })
+    listenerBackButton(async () => {
+      navigate(-1); // 返回上一页
+      isListener = false;
+      if (listener) {
+        await listener.unregister();
+      }
+    });
   };
 
   return (

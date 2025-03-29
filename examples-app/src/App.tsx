@@ -1,65 +1,56 @@
 import React, { useState } from "react";
-import { IosNetworkDetectDemo } from "./pages/IosNetworkDetectDemo.tsx";
-import { MobileOnBackpressedListenerDemo } from "./pages/MobileOnBackpressedListenerDemo.tsx";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { IosNetworkDetectDemo } from "./pages/IosNetworkDetectDemo";
+import { MobileOnBackpressedListenerDemo } from "./pages/MobileOnBackpressedListenerDemo";
 import "./App.css";
 
 function App() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState("home");
-
-  const renderContent = () => {
-    switch (currentPage) {
-      case "ios-network-detect":
-        return <IosNetworkDetectDemo />;
-      case "mobile-onbackpressed-listener":
-        return <MobileOnBackpressedListenerDemo />;
-      default:
-        return <Home />;
-    }
-  };
 
   return (
-    <main className="container">
-      <button className="menu-button" onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
-        <div className={`hamburger ${isDrawerOpen ? "open" : ""}`}>
-          <span></span>
-          <span></span>
-          <span></span>
+    <Router>
+      <main className="container">
+        <button className="menu-button" onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+          <div className={`hamburger ${isDrawerOpen ? "open" : ""}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+
+        <nav className={`drawer ${isDrawerOpen ? "open" : ""}`}>
+          <h1>Tauri Plugins Demo</h1>
+          <ul>
+            <li>
+              <Link 
+                to="/ios-network-detect" 
+                onClick={() => setIsDrawerOpen(false)}
+              >
+                iOS Network Detect
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/mobile-onbackpressed-listener" 
+                onClick={() => setIsDrawerOpen(false)}
+              >
+                Mobile OnBackpressed Listener
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        {isDrawerOpen && <div className="overlay" onClick={() => setIsDrawerOpen(false)} />}
+
+        <div className="content">
+          <Routes>
+            <Route path="/ios-network-detect" element={<IosNetworkDetectDemo />} />
+            <Route path="/mobile-onbackpressed-listener" element={<MobileOnBackpressedListenerDemo />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
         </div>
-      </button>
-
-      <nav className={`drawer ${isDrawerOpen ? "open" : ""}`}>
-        <h1>Tauri Plugins Demo</h1>
-        <ul>
-          <li>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setCurrentPage("ios-network-detect");
-                setIsDrawerOpen(false);
-              }}
-            >
-              iOS Network Detect
-            </a>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                setCurrentPage("mobile-onbackpressed-listener");
-                setIsDrawerOpen(false);
-              }}
-            >
-              Mobile OnBackpressed Listener
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      {isDrawerOpen && <div className="overlay" onClick={() => setIsDrawerOpen(false)} />}
-
-      <div className="content">{renderContent()}</div>
-    </main>
+      </main>
+    </Router>
   );
 }
 
