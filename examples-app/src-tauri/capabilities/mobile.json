@@ -5,8 +5,6 @@
   "windows": ["main"],
   "platforms": ["android", "iOS"],
   "permissions": [
-    "mobile-onbackpressed-listener:allow-register-back-event",
-    "mobile-onbackpressed-listener:allow-registerListener",
-    "mobile-onbackpressed-listener:allow-remove-listener"
+    "mobile-onbackpressed-listener:default"
   ]
 }

@@ -1,3 +1,10 @@
+## Default Permission
+
+Default permissions for the plugin
+
+- `allow-register-back-event`
+- `allow-registerListener`
+- `allow-remove-listener`
 
 ## Permission Table
 
