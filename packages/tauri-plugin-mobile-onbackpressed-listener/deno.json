@@ -7,5 +7,11 @@
   "imports": {
     "@tauri-apps/api": "npm:@tauri-apps/api@^2",
     "@tauri-apps/cli": "npm:@tauri-apps/cli@^2"
+  },
+  "publish": {
+    "include": [
+      "README.md",
+      "guest-js/**/*.ts"
+    ]
   }
 }
