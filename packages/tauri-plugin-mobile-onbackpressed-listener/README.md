@@ -64,6 +64,43 @@ pub fn run() {
 }
 ```
 
+#### deno usage
+
 ```ts
 import { registerBackEvent } from "jsr:@kingsword/tauri-plugin-mobile-onbackpressed-listener";
+```
+
+#### nodejs usage
+
+1. update .npmrc
+
+```diff
++ @jsr:registry=https://npm.jsr.io
+```
+
+2. install
+
+```bash
+npx jsr add @kingsword/tauri-plugin-mobile-onbackpressed-listener
+```
+
+3. usage
+
+```ts
+import { registerBackEvent } from "@jsr/kingsword__tauri-plugin-mobile-onbackpressed-listener";
+```
+or
+
+```diff
+// package.json
+ {
+   "type": "module",
+   "dependencies": {
+-    "@jsr/kingsword__tauri-plugin-mobile-onbackpressed-listener": "2.0.1"
++    "@kingsword/tauri-plugin-mobile-onbackpressed-listener": "npm:@jsr/kingsword__tauri-plugin-mobile-onbackpressed-listener@2.0.1"
+   }
+ }
+```
+```ts
+import { registerBackEvent } from "@kingsword/tauri-plugin-mobile-onbackpressed-listener";
 ```
