@@ -4,7 +4,8 @@
   "exports": {},
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "react",
+    "jsxImportSource": "npm:react@^19.0",
+    "jsxImportSourceTypes": "npm:@types/react@^19.0",
     "lib": [
       "ES2020",
       "DOM",

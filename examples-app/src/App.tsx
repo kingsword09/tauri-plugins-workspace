@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { IosNetworkDetectDemo } from "./pages/IosNetworkDetectDemo";
-import { MobileOnBackpressedListenerDemo } from "./pages/MobileOnBackpressedListenerDemo";
+import { IosNetworkDetectDemo } from "./pages/IosNetworkDetectDemo.tsx";
+import { MobileOnBackpressedListenerDemo } from "./pages/MobileOnBackpressedListenerDemo.tsx";
 import "./App.css";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <main className="container">
-        <button className="menu-button" onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+        <button type="button" className="menu-button" onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
           <div className={`hamburger ${isDrawerOpen ? "open" : ""}`}>
             <span></span>
             <span></span>
@@ -22,18 +22,12 @@ function App() {
           <h1>Tauri Plugins Demo</h1>
           <ul>
             <li>
-              <Link 
-                to="/ios-network-detect" 
-                onClick={() => setIsDrawerOpen(false)}
-              >
+              <Link to="/ios-network-detect" onClick={() => setIsDrawerOpen(false)}>
                 iOS Network Detect
               </Link>
             </li>
             <li>
-              <Link 
-                to="/mobile-onbackpressed-listener" 
-                onClick={() => setIsDrawerOpen(false)}
-              >
+              <Link to="/mobile-onbackpressed-listener" onClick={() => setIsDrawerOpen(false)}>
                 Mobile OnBackpressed Listener
               </Link>
             </li>

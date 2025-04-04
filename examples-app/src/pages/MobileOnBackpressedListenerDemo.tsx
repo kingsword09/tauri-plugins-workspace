@@ -1,7 +1,6 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { registerBackEvent } from "@kingsword/tauri-plugin-mobile-onbackpressed-listener";
-import { PluginListener } from "@tauri-apps/api/core";
+import type { PluginListener } from "@tauri-apps/api/core";
 
 let isListener = false;
 let listener: PluginListener | undefined;
@@ -18,7 +17,7 @@ export function MobileOnBackpressedListenerDemo() {
     listenerClose();
   };
 
-  const registerBackEventToBack = async () => {
+  const registerBackEventToBack = () => {
     listenerBackButton(async () => {
       navigate(-1); // 返回上一页
       isListener = false;
@@ -31,7 +30,9 @@ export function MobileOnBackpressedListenerDemo() {
   return (
     <div>
       <h2>mobile onbackpressed listener</h2>
-      <button onClick={registerBackEventToBack}>注册返回事件</button>
+      <button type="button" onClick={registerBackEventToBack}>
+        注册返回事件
+      </button>
     </div>
   );
 }
