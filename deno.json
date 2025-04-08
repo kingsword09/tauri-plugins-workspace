@@ -4,7 +4,8 @@
     "./examples-app",
     "./examples-app/src-tauri/gen/android",
     "./examples-app/src-tauri/gen/apple",
-    "./packages/tauri-plugin-mobile-onbackpressed-listener"
+    "./packages/tauri-plugin-mobile-onbackpressed-listener",
+    "./packages/tauri-plugin-android-package-install"
   ],
   "tasks": {
     "dev:android": "deno task --filter 'examples-app' tauri android dev",

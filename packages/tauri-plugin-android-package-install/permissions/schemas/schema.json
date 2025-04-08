@@ -295,46 +295,34 @@
       "type": "string",
       "oneOf": [
         {
-          "description": "Enables the registerListener command without any pre-configured scope.",
+          "description": "Enables the install command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-registerListener",
-          "markdownDescription": "Enables the registerListener command without any pre-configured scope."
+          "const": "allow-install",
+          "markdownDescription": "Enables the install command without any pre-configured scope."
         },
         {
-          "description": "Denies the registerListener command without any pre-configured scope.",
+          "description": "Denies the install command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-registerListener",
-          "markdownDescription": "Denies the registerListener command without any pre-configured scope."
+          "const": "deny-install",
+          "markdownDescription": "Denies the install command without any pre-configured scope."
         },
         {
-          "description": "Enables the register_back_event command without any pre-configured scope.",
+          "description": "Enables the ping command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-register-back-event",
-          "markdownDescription": "Enables the register_back_event command without any pre-configured scope."
+          "const": "allow-ping",
+          "markdownDescription": "Enables the ping command without any pre-configured scope."
         },
         {
-          "description": "Denies the register_back_event command without any pre-configured scope.",
+          "description": "Denies the ping command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-register-back-event",
-          "markdownDescription": "Denies the register_back_event command without any pre-configured scope."
+          "const": "deny-ping",
+          "markdownDescription": "Denies the ping command without any pre-configured scope."
         },
         {
-          "description": "Enables the remove_listener command without any pre-configured scope.",
-          "type": "string",
-          "const": "allow-remove-listener",
-          "markdownDescription": "Enables the remove_listener command without any pre-configured scope."
-        },
-        {
-          "description": "Denies the remove_listener command without any pre-configured scope.",
-          "type": "string",
-          "const": "deny-remove-listener",
-          "markdownDescription": "Denies the remove_listener command without any pre-configured scope."
-        },
-        {
-          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-register-back-event`\n- `allow-registerListener`\n- `allow-remove-listener`",
+          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`",
           "type": "string",
           "const": "default",
-          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-register-back-event`\n- `allow-registerListener`\n- `allow-remove-listener`"
+          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`"
         }
       ]
     }

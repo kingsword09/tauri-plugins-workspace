@@ -1,0 +1,18 @@
+{
+  "name": "@kingsword/tauri-plugin-android-package-install",
+  "version": "2.0.0",
+  "exports": {
+    ".": "./guest-js/index.ts"
+  },
+  "imports": {
+    "@tauri-apps/api": "npm:@tauri-apps/api@^2",
+    "@tauri-apps/cli": "npm:@tauri-apps/cli@^2"
+  },
+  "license": "MIT",
+  "publish": {
+    "include": [
+      "README.md",
+      "guest-js/**/*.ts"
+    ]
+  }
+}
