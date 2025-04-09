@@ -1,5 +1,7 @@
 # Tauri Plugin android-package-install
 
+[![JSR @kingsword09](https://jsr.io/badges/@kingsword09)](https://jsr.io/@kingsword09)
+[![JSR](https://jsr.io/badges/@kingsword/tauri-plugin-android-package-install)](https://jsr.io/@kingsword/tauri-plugin-android-package-install)
 [![Crates.io][crates-badge]][crates-url]
 
 [crates-badge]: https://img.shields.io/crates/v/tauri-plugin-android-package-install
@@ -32,7 +34,7 @@ Install the Core plugin by adding the following to your `Cargo.toml` file:
 
 ```toml
 [target.'cfg(any(target_os = "android"))'.dependencies]
-tauri-plugin-android-package-install = "2.0.0"
+tauri-plugin-android-package-install = "2.0.1"
 ```
 
 #### Automatically
@@ -98,8 +100,8 @@ or
  {
    "type": "module",
    "dependencies": {
--    "@jsr/kingsword__tauri-plugin-android-package-install": "2.0.0"
-+    "@kingsword/tauri-plugin-android-package-install": "npm:@jsr/kingsword__tauri-plugin-android-package-install@2.0.0"
+-    "@jsr/kingsword__tauri-plugin-android-package-install": "2.0.1"
++    "@kingsword/tauri-plugin-android-package-install": "npm:@jsr/kingsword__tauri-plugin-android-package-install@2.0.1"
    }
  }
 ```
