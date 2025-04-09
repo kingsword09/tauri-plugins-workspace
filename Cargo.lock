@@ -3550,7 +3550,7 @@ dependencies = [
 
 [[package]]
 name = "tauri-plugin-android-package-install"
-version = "2.0.0"
+version = "2.0.1"
 dependencies = [
  "serde",
  "tauri",

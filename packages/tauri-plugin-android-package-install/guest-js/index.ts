@@ -6,9 +6,9 @@ import {
 } from "@tauri-apps/api/core";
 export type { PermissionState } from "@tauri-apps/api/core";
 
-export async function install(install_path: string): Promise<void> {
+export async function install(installPath: string): Promise<void> {
   return await invoke<void>("plugin:android-package-install|install", {
-    install_path,
+    installPath,
   });
 }
 
