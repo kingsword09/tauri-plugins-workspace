@@ -885,6 +885,7 @@ dependencies = [
  "serde_json",
  "tauri",
  "tauri-build",
+ "tauri-plugin-android-package-install",
  "tauri-plugin-ios-network-detect",
  "tauri-plugin-mobile-onbackpressed-listener",
  "tauri-plugin-opener",

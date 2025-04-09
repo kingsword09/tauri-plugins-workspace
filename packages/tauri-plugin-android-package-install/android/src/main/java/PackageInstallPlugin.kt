@@ -1,55 +1,87 @@
 package tech.kingsword.tauri_plugins.android_package_install
 
+import android.Manifest
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.os.Handler
+import android.os.Looper
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import app.tauri.PermissionState
 import app.tauri.annotation.Command
-import app.tauri.annotation.InvokeArg
+import app.tauri.annotation.Permission
+import app.tauri.annotation.PermissionCallback
 import app.tauri.annotation.TauriPlugin
 import app.tauri.plugin.Invoke
 import app.tauri.plugin.JSObject
 import app.tauri.plugin.Plugin
 import java.io.File
 
-@InvokeArg
-class PackageInstallOptions {
-  lateinit var title: String
-  lateinit var message: String
-  lateinit var agree: String
-  lateinit var disagree: String
-}
+internal const val PERMISSION_ALIAS_INSTALL = "install"
+private const val PERMISSION_NAME = Manifest.permission.REQUEST_INSTALL_PACKAGES
 
-@TauriPlugin
+@TauriPlugin(
+  permissions = [
+    Permission(strings = [PERMISSION_NAME], alias = PERMISSION_ALIAS_INSTALL)
+  ]
+)
 class PackageInstallPlugin(private val activity: Activity) : Plugin(activity) {
-  @Command
-  fun requestPermission(invoke: Invoke) {
-    val args = invoke.parseArgs(PackageInstallOptions::class.java)
+  private var requestPermissionResponse: JSObject? = null
 
-    RequestInstallationPermissionDialog(
-      activity,
-      args.title,
-      args.message,
-      args.agree,
-      args.disagree
-    ).show()
+  @PermissionCallback
+  fun installPermissionCallback(invoke: Invoke) {
+    if (requestPermissionResponse == null) {
+      return
+    }
 
-    invoke.resolve()
+    val requestPermissionResponse = requestPermissionResponse!!
+    println("QAQ canRequestPackageInstalls = ${activity.packageManager.canRequestPackageInstalls()}")
+
+    val granted = getPermissionState(PERMISSION_ALIAS_INSTALL) === PermissionState.GRANTED
+
+    if (granted || activity.packageManager.canRequestPackageInstalls()) {
+      requestPermissionResponse.put(PERMISSION_ALIAS_INSTALL, PermissionState.GRANTED)
+    } else {
+      requestPermissionResponse.put(PERMISSION_ALIAS_INSTALL, PermissionState.DENIED)
+    }
+
+    invoke.resolve(requestPermissionResponse)
+    this.requestPermissionResponse = null
   }
 
   @Command
-  fun checkPermission(invoke: Invoke) {
-    val ret = JSObject()
-
-    if (activity.packageManager.canRequestPackageInstalls()) {
-      ret.put("packageInstall", PermissionState.GRANTED)
+  override fun requestPermissions(invoke: Invoke) {
+    val requestPermissionResponse = JSObject()
+    this.requestPermissionResponse = requestPermissionResponse
+    if (getPermissionState(PERMISSION_ALIAS_INSTALL) === PermissionState.GRANTED) {
+      requestPermissionResponse.put(PERMISSION_ALIAS_INSTALL, PermissionState.GRANTED)
     } else {
-      ret.put("packageInstall", PermissionState.DENIED)
+      Handler(Looper.getMainLooper())
+        .post {
+          RequestInstallationPermissionDialog(
+            activity,
+            handle!!,
+            invoke,
+            "installPermissionCallback"
+          ).show((activity as AppCompatActivity).supportFragmentManager)
+        }
+      return
     }
 
-    invoke.resolve(ret)
+    invoke.resolve(requestPermissionResponse)
+  }
+
+  @Command
+  override fun checkPermissions(invoke: Invoke) {
+    if (activity.packageManager.canRequestPackageInstalls()) {
+      val requestPermissionResponse = JSObject()
+      requestPermissionResponse.put(PERMISSION_ALIAS_INSTALL, PermissionState.GRANTED)
+      invoke.resolve(requestPermissionResponse)
+    } else {
+      super.checkPermissions(invoke)
+    }
   }
 
   @Command
@@ -68,9 +100,17 @@ class PackageInstallPlugin(private val activity: Activity) : Plugin(activity) {
     try {
       activity.startActivity(installIntent)
     } catch (e: ActivityNotFoundException) {
-      Toast.makeText(activity, "Not Found Apk.", Toast.LENGTH_SHORT).show()
+      Toast.makeText(
+        activity,
+        R.string.request_installation_permission_dialog__no_found_apk,
+        Toast.LENGTH_SHORT
+      ).show()
     } catch (e: SecurityException) {
-      Toast.makeText(activity, "Permission Denies.", Toast.LENGTH_SHORT).show()
+      Toast.makeText(
+        activity,
+        R.string.request_installation_permission_dialog__permission_denies,
+        Toast.LENGTH_SHORT
+      ).show()
     }
   }
 }

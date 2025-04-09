@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request_installation_permission_dialog__abort">放弃</string>
+    <string name="request_installation_permission_dialog__grant_permission">授予权限</string>
+    <string name="request_installation_permission_dialog__message">%1$s 缺失了安装和更新应用程序的权限。您需要授予这些权限，否则 %1$s 无法工作。</string>
+    <string name="request_installation_permission_dialog__title">安装器权限</string>
+    <string name="request_installation_permission_dialog__no_found_apk">安装包未找到</string>
+    <string name="request_installation_permission_dialog__permission_denies">权限拒绝</string>
+</resources>

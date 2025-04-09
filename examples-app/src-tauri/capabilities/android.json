@@ -1,0 +1,10 @@
+{
+  "$schema": "../gen/schemas/mobile-schema.json",
+  "identifier": "run-app-android",
+  "description": "Permissions to run the app (android only)",
+  "windows": ["main"],
+  "platforms": ["android"],
+  "permissions": [
+    "android-package-install:default"
+  ]
+}

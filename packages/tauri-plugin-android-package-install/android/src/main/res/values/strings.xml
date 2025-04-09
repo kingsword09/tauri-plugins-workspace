@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request_installation_permission_dialog__abort">Abort</string>
+    <string name="request_installation_permission_dialog__grant_permission">Grant permission</string>
+    <string name="request_installation_permission_dialog__message">%1$s is missing the permission to install and update apps. You have to grant these permissions or %1$s will not work.</string>
+    <string name="request_installation_permission_dialog__title">Installer permission</string>
+    <string name="request_installation_permission_dialog__no_found_apk">Not Found Apk.</string>
+    <string name="request_installation_permission_dialog__permission_denies">Permission Denies.</string>
+</resources>

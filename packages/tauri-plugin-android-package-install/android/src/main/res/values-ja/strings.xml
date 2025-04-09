@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request_installation_permission_dialog__abort">中止</string>
+    <string name="request_installation_permission_dialog__grant_permission">権限を許可</string>
+    <string name="request_installation_permission_dialog__message">%1$s にアプリのインストールと更新を行う権限がありません。%1$s を正しく動作させるには、これらの権限を許可してください。</string>
+    <string name="request_installation_permission_dialog__title">インストーラーの権限</string>
+    <string name="request_installation_permission_dialog__no_found_apk">インストールパッケージが見つかりません</string>
+    <string name="request_installation_permission_dialog__permission_denies">権限が拒否されました</string>
+</resources>

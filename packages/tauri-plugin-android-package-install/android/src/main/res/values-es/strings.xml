@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request_installation_permission_dialog__abort">Cancelar</string>
+    <string name="request_installation_permission_dialog__grant_permission">Conceder permiso</string>
+    <string name="request_installation_permission_dialog__message">A %1$s le falta el permiso para instalar y actualizar las aplicaciones. Tienes que conceder estos permisos o %1$s no funcionará.</string>
+    <string name="request_installation_permission_dialog__title">Permiso del instalador</string>
+    <string name="request_installation_permission_dialog__no_found_apk">Paquete de instalación no encontrado</string>
+    <string name="request_installation_permission_dialog__permission_denies">Permiso denegado</string>
+</resources>

@@ -295,6 +295,18 @@
       "type": "string",
       "oneOf": [
         {
+          "description": "Enables the check_permissions command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-check-permissions",
+          "markdownDescription": "Enables the check_permissions command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the check_permissions command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-check-permissions",
+          "markdownDescription": "Denies the check_permissions command without any pre-configured scope."
+        },
+        {
           "description": "Enables the install command without any pre-configured scope.",
           "type": "string",
           "const": "allow-install",
@@ -307,22 +319,22 @@
           "markdownDescription": "Denies the install command without any pre-configured scope."
         },
         {
-          "description": "Enables the ping command without any pre-configured scope.",
+          "description": "Enables the request_permissions command without any pre-configured scope.",
           "type": "string",
-          "const": "allow-ping",
-          "markdownDescription": "Enables the ping command without any pre-configured scope."
+          "const": "allow-request-permissions",
+          "markdownDescription": "Enables the request_permissions command without any pre-configured scope."
         },
         {
-          "description": "Denies the ping command without any pre-configured scope.",
+          "description": "Denies the request_permissions command without any pre-configured scope.",
           "type": "string",
-          "const": "deny-ping",
-          "markdownDescription": "Denies the ping command without any pre-configured scope."
+          "const": "deny-request-permissions",
+          "markdownDescription": "Denies the request_permissions command without any pre-configured scope."
         },
         {
-          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`",
+          "description": "This permission set configures which\nandroid package install features are by default exposed.\n\n#### Granted Permissions\n\nIt allows all package install features.\n\n\n#### This default permission set includes:\n\n- `allow-install`\n- `allow-check-permissions`\n- `allow-request-permissions`",
           "type": "string",
           "const": "default",
-          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`"
+          "markdownDescription": "This permission set configures which\nandroid package install features are by default exposed.\n\n#### Granted Permissions\n\nIt allows all package install features.\n\n\n#### This default permission set includes:\n\n- `allow-install`\n- `allow-check-permissions`\n- `allow-request-permissions`"
         }
       ]
     }

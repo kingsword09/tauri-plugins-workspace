@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request_installation_permission_dialog__abort">Abandonner</string>
+    <string name="request_installation_permission_dialog__grant_permission">Accorder la permission</string>
+    <string name="request_installation_permission_dialog__message">%1$s n\'a pas l\'autorisation d\'installer et de mettre à jour des applications. Vous devez accorder ces permissions ou %1$s ne fonctionnera pas.</string>
+    <string name="request_installation_permission_dialog__title">Autorisation de l\'installateur</string>
+    <string name="request_installation_permission_dialog__no_found_apk">Paquet d\'installation introuvable</string>
+    <string name="request_installation_permission_dialog__permission_denies">Autorisation refusée</string>
+</resources>

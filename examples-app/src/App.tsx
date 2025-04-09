@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { IosNetworkDetectDemo } from "./pages/IosNetworkDetectDemo.tsx";
 import { MobileOnBackpressedListenerDemo } from "./pages/MobileOnBackpressedListenerDemo.tsx";
+import { AndroidPackageInstallDemo } from "./pages/AndroidPackageInstallDemo.tsx";
 import "./App.css";
 
 function App() {
@@ -31,6 +32,11 @@ function App() {
                 Mobile OnBackpressed Listener
               </Link>
             </li>
+            <li>
+              <Link to="/android-package-install" onClick={() => setIsDrawerOpen(false)}>
+                Android Package Install
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -40,6 +46,7 @@ function App() {
           <Routes>
             <Route path="/ios-network-detect" element={<IosNetworkDetectDemo />} />
             <Route path="/mobile-onbackpressed-listener" element={<MobileOnBackpressedListenerDemo />} />
+            <Route path="/android-package-install" element={<AndroidPackageInstallDemo />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </div>

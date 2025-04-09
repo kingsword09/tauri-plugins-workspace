@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="request_installation_permission_dialog__abort">Отмена</string>
+    <string name="request_installation_permission_dialog__grant_permission">Предоставить разрешение</string>
+    <string name="request_installation_permission_dialog__message">%1$s не имеет прав на установку и обновление приложений. Необходимо предоставить эти разрешения, иначе %1$s не сможет работать.</string>
+    <string name="request_installation_permission_dialog__title">Разрешения установщика</string>
+    <string name="request_installation_permission_dialog__no_found_apk">Установочный пакет не найден</string>
+    <string name="request_installation_permission_dialog__permission_denies">Разрешение отклонено</string>
+</resources>

@@ -1,10 +1,19 @@
 ## Default Permission
 
-Default permissions for the plugin
+This permission set configures which
+android package install features are by default exposed.
+
+#### Granted Permissions
+
+It allows all package install features.
+
+
 
 #### This default permission set includes the following:
 
-- `allow-ping`
+- `allow-install`
+- `allow-check-permissions`
+- `allow-request-permissions`
 
 ## Permission Table
 
@@ -14,6 +23,32 @@ Default permissions for the plugin
 <th>Description</th>
 </tr>
 
+
+<tr>
+<td>
+
+`android-package-install:allow-check-permissions`
+
+</td>
+<td>
+
+Enables the check_permissions command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`android-package-install:deny-check-permissions`
+
+</td>
+<td>
+
+Denies the check_permissions command without any pre-configured scope.
+
+</td>
+</tr>
 
 <tr>
 <td>
@@ -44,12 +79,12 @@ Denies the install command without any pre-configured scope.
 <tr>
 <td>
 
-`android-package-install:allow-ping`
+`android-package-install:allow-request-permissions`
 
 </td>
 <td>
 
-Enables the ping command without any pre-configured scope.
+Enables the request_permissions command without any pre-configured scope.
 
 </td>
 </tr>
@@ -57,12 +92,12 @@ Enables the ping command without any pre-configured scope.
 <tr>
 <td>
 
-`android-package-install:deny-ping`
+`android-package-install:deny-request-permissions`
 
 </td>
 <td>
 
-Denies the ping command without any pre-configured scope.
+Denies the request_permissions command without any pre-configured scope.
 
 </td>
 </tr>

@@ -21,7 +21,7 @@ pub fn init<R: Runtime, C: DeserializeOwned>(
 pub struct AndroidPackageInstall<R: Runtime>(PluginHandle<R>);
 
 impl<R: Runtime> AndroidPackageInstall<R> {
-  pub fn install(&self, install_path: String) -> crate::Result<PingResponse> {
+  pub fn install(&self, install_path: String) -> crate::Result<()> {
     self.0.run_mobile_plugin("install", install_path).map_err(Into::into)
   }
 }

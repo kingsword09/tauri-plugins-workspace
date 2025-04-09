@@ -1,9 +1,27 @@
-import { invoke } from '@tauri-apps/api/core'
+import {
+  invoke,
+  checkPermissions as checkPermissions_,
+  requestPermissions as requestPermissions_,
+  type PermissionState,
+} from "@tauri-apps/api/core";
+export type { PermissionState } from "@tauri-apps/api/core";
 
-export async function ping(value: string): Promise<string | null> {
-  return await invoke<{value?: string}>('plugin:android-package-install|ping', {
-    payload: {
-      value,
-    },
-  }).then((r) => (r.value ? r.value : null));
+export async function install(install_path: string) {
+  return await invoke<void>("plugin:android-package-install|install", {
+    install_path,
+  });
+}
+
+/**
+ * Get permission state.
+ */
+export async function checkPermissions(): Promise<PermissionState> {
+  return await checkPermissions_<{ install: PermissionState }>("android-package-install").then((r) => r.install);
+}
+
+/**
+ * Request permissions to use the camera.
+ */
+export async function requestPermissions(): Promise<PermissionState> {
+  return await requestPermissions_<{ install: PermissionState }>("android-package-install").then((r) => r.install);
 }

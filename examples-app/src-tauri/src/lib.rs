@@ -8,6 +8,9 @@ fn greet(name: &str) -> String {
 pub fn run() {
   tauri::Builder::default()
     .setup(|app| {
+      #[cfg(target_os = "android")]
+      app.handle().plugin(tauri_plugin_android_package_install::init())?;
+
       #[cfg(target_os = "ios")]
       app.handle().plugin(tauri_plugin_ios_network_detect::init())?;
 
