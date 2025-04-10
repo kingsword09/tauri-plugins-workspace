@@ -109,3 +109,15 @@ or
 ```ts
 import { checkPermissions, requestPermissions, install } from "@kingsword/tauri-plugin-android-package-install";
 ```
+
+## QA
+#### 1. FileProvider Issue: Failed to find configured root that contains ...
+`res/xml/file_paths.xml`
+```diff
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+  <external-path name="my_images" path="." />
+  <cache-path name="my_cache_images" path="." />
++  <files-path name="apk_files" path="." />
+</paths>
+```

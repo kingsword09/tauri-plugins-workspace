@@ -1,6 +1,6 @@
 [package]
 name = "tauri-plugin-android-package-install"
-version = "2.0.1"
+version = "2.0.2"
 description = "This plugin mainly provides package install on android devices."
 edition = { workspace = true }
 authors = { workspace = true }
